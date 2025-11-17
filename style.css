@@ -16,7 +16,7 @@
 
 body {
     /* LATAR BELAKANG FOTO ELEGAN */
-    background-image: url('path/to/your/elegant-background-image.jpg'); /* GANTI DENGAN PATH FOTO ANDA */
+    background-image: url('https://i.ibb.co.com/ynmQJ9s5/ae0cc953-62a9-4c6c-a16f-8a09502b0f14.jpg'); /* GANTI DENGAN PATH FOTO ANDA */
     background-color: #f8f9fa; /* Warna fallback jika foto tidak dimuat */
     background-size: cover; /* Memastikan foto mencakup seluruh area */
     background-position: center center;
