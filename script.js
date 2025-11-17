@@ -42,7 +42,7 @@ document.getElementById('request-form').addEventListener('submit', function(e) {
   
   const message = `Misi Bang Mau Request Lagu:%0A%0AJudul Lagu: ${songTitle}%0AKategori: ${category}%0AStyle: ${style}%0A%0AHarganya Berapa Ya Bang?`;
   
-  window.open(`https://wa.me/6283877486027?text=${message}`, '_blank');
+  window.open(`https://wa.me/6285753225113?text=${message}`, '_blank');
 });
 
 document.querySelectorAll('.btn-buy').forEach(button => {
@@ -52,7 +52,7 @@ document.querySelectorAll('.btn-buy').forEach(button => {
     
     const message = `Misi Bang Mau Beli Flm ${productName}%0AHarga: Rp ${parseInt(productPrice).toLocaleString('id-ID')}%0A%0AFlm Ready Kah?`;
     
-    window.open(`https://wa.me/6283877486027?text=${message}`, '_blank');
+    window.open(`https://wa.me/6285753225113?text=${message}`, '_blank');
   });
 });
 
