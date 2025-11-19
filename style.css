@@ -1,46 +1,47 @@
 /* ==================================== */
-/* 🎨 SKEMA WARNA ELEGAN DAN PROFESIONAL */
+/* 🎨 SKEMA WARNA ELEGAN HITAM-BIRU (DARK MODE) */
 /* ==================================== */
-/* Aksen Utama: #007bff (Biru Profesional) */
-/* Teks Utama: #343a40 (Abu-abu Batu Bara) */
-/* Latar Belakang: #f8f9fa (Putih Gading) */
-/* Bayangan Halus: rgba(0, 0, 0, 0.05) */
+/* Latar Belakang Utama: #1A1A1A */
+/* Aksen Primer (Biru iOS): #007AFF */
+/* Konten/Card: #2C2C2C */
+/* Teks Utama: #EAEAEA */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Font yang lebih profesional dan bersih */
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Font style iOS-like: San Francisco (SF Pro) */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 body {
-    /* LATAR BELAKANG FOTO ELEGAN */
+    /* LATAR BELAKANG FOTO ELEGAN (GANTI URL INI) */
+    /* Untuk mode gelap, disarankan menggunakan foto dengan tone gelap atau menambahkan overlay */
     background-image: url('https://i.ibb.co.com/B7GsVvV/20251117-123659.png'); /* GANTI DENGAN PATH FOTO ANDA */
-    background-color: #f8f9fa; /* Warna fallback jika foto tidak dimuat */
-    background-size: cover; /* Memastikan foto mencakup seluruh area */
+    background-color: #1A1A1A; /* Warna fallback: Dark Charcoal */
+    background-size: cover;
     background-position: center center;
-    background-attachment: fixed; /* Membuat latar belakang tetap saat discroll */
-    color: #343a40; /* Teks Utama Abu-abu Batu Bara */
+    background-attachment: fixed;
+    color: #EAEAEA; /* Teks Utama Putih Kebiruan */
     line-height: 1.6;
-    min-height: 100vh; /* Memastikan body mencakup tinggi viewport */
+    min-height: 100vh;
 }
 
 /* ================== */
 /* HEADER & NAVBAR */
 /* ================== */
 .navbar {
-    background-color: #ffffff;
-    padding: 18px 5%; /* Padding sedikit lebih besar */
+    background-color: #2C2C2C; /* Warna gelap untuk navbar */
+    padding: 18px 5%;
     display: flex;
     align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    /* Bayangan lebih halus dan modern */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-bottom: 1px solid #e9ecef;
+    /* Bayangan lebih halus untuk dark mode */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #444;
 }
 
 .logo {
@@ -49,7 +50,7 @@ body {
 }
 
 .logo-icon {
-    width: 36px; /* Ukuran icon sedikit diperbesar */
+    width: 36px;
     height: 36px;
     margin-right: 15px;
 }
@@ -63,8 +64,8 @@ body {
 .logo-text {
     font-size: 24px;
     font-weight: 700;
-    color: #343a40;
-    letter-spacing: -0.5px; /* Sedikit sentuhan tipografi */
+    color: #EAEAEA; /* Teks logo putih */
+    letter-spacing: -0.5px;
 }
 
 /* ================== */
@@ -72,20 +73,19 @@ body {
 /* ================== */
 .container {
     max-width: 1200px;
-    /* Penyesuaian margin agar tidak tertutup navbar dan footer */
     margin: 100px auto 120px;
     padding: 0 20px;
 }
 
 .content-section {
     display: none;
-    padding: 50px 40px; /* Padding lebih besar */
-    background-color: #ffffff;
+    padding: 50px 40px;
+    background-color: #2C2C2C; /* Card warna gelap */
     border-radius: 12px;
     margin-bottom: 30px;
-    /* Bayangan lebih dalam dan elegan */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e9ecef;
+    /* Bayangan yang menonjol di dark mode */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
 }
 
 .active-section {
@@ -103,7 +103,7 @@ body {
 .dashboard-intro h1 {
     font-size: 42px;
     margin-bottom: 20px;
-    color: #007bff; /* Aksen Biru Profesional */
+    color: #007AFF; /* Aksen Biru Cerah */
     font-weight: 700;
 }
 
@@ -111,7 +111,7 @@ body {
     font-size: 18px;
     max-width: 800px;
     margin: 0 auto;
-    color: #6c757d; /* Abu-abu Hangat */
+    color: #A0A0A0; /* Abu-abu terang untuk deskripsi */
     line-height: 1.8;
 }
 
@@ -126,13 +126,13 @@ body {
 }
 
 .feature-card {
-    background-color: #ffffff;
+    background-color: #2C2C2C;
     padding: 35px 30px;
     border-radius: 12px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e9ecef;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -140,25 +140,26 @@ body {
 }
 
 .feature-card:hover {
-    transform: translateY(-8px); /* Efek hover lebih menonjol */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    background-color: #383838; /* Sedikit lebih terang saat hover */
 }
 
 .feature-icon {
     font-size: 52px;
-    color: #007bff; /* Aksen Biru Profesional */
+    color: #007AFF; /* Aksen Biru Cerah */
     margin-bottom: 25px;
 }
 
 .feature-card h3 {
     margin-bottom: 15px;
-    color: #343a40;
+    color: #EAEAEA;
     font-size: 24px;
     font-weight: 600;
 }
 
 .feature-card p {
-    color: #6c757d;
+    color: #A0A0A0;
     line-height: 1.7;
     flex-grow: 1;
 }
@@ -166,7 +167,7 @@ body {
 .section-title {
     text-align: center;
     margin-bottom: 40px;
-    color: #343a40;
+    color: #EAEAEA;
     font-size: 36px;
     font-weight: 700;
 }
@@ -176,18 +177,18 @@ body {
 /* ================== */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ukuran kartu sedikit diperbesar */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     justify-items: center;
 }
 
 .product-card {
-    background-color: #ffffff;
+    background-color: #2C2C2C;
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e9ecef;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
     width: 100%;
     max-width: 320px;
     display: flex;
@@ -197,13 +198,13 @@ body {
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
 .product-image {
-    height: 200px; /* Tinggi gambar diperbesar */
-    /* Gradasi yang lebih elegan */
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    height: 200px;
+    /* Gradasi Biru Cerah */
+    background: linear-gradient(135deg, #007AFF, #0056b3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -222,21 +223,21 @@ body {
 .product-title {
     font-size: 22px;
     margin-bottom: 12px;
-    color: #343a40;
+    color: #EAEAEA;
     font-weight: 600;
     line-height: 1.4;
 }
 
 .product-price {
     font-size: 22px;
-    color: #007bff;
+    color: #007AFF; /* Biru Cerah */
     margin-bottom: 8px;
     font-weight: bold;
 }
 
 .product-sold {
     font-size: 15px;
-    color: #6c757d;
+    color: #A0A0A0;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
@@ -244,7 +245,7 @@ body {
 }
 
 .product-sold::before {
-    content: "🛍️"; /* Emoji Keranjang yang lebih umum */
+    content: "🛍️";
     font-size: 14px;
 }
 
@@ -266,30 +267,30 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Bayangan halus pada tombol */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btn-play {
-    background-color: #e9ecef;
-    color: #343a40;
-    border: 1px solid #dee2e6;
+    background-color: #444; /* Abu-abu tombol dark mode */
+    color: #EAEAEA;
+    border: 1px solid #555;
 }
 
 .btn-play:hover {
-    background-color: #dee2e6;
+    background-color: #555;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .btn-buy {
-    background-color: #007bff;
+    background-color: #007AFF; /* Biru Cerah */
     color: #fff;
 }
 
 .btn-buy:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 122, 255, 0.4);
 }
 
 /* ================== */
@@ -298,24 +299,24 @@ body {
 .request-container {
     max-width: 600px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: #2C2C2C;
     padding: 50px 45px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e9ecef;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
 }
 
 .request-logo {
     font-size: 64px;
-    color: #007bff;
+    color: #007AFF;
     margin-bottom: 30px;
 }
 
 .request-title {
     font-size: 34px;
     margin-bottom: 40px;
-    color: #343a40;
+    color: #EAEAEA;
     font-weight: 700;
 }
 
@@ -328,7 +329,7 @@ body {
     display: block;
     margin-bottom: 12px;
     font-weight: 600;
-    color: #343a40;
+    color: #EAEAEA;
     font-size: 17px;
 }
 
@@ -336,17 +337,18 @@ body {
     width: 100%;
     padding: 16px 18px;
     border-radius: 8px;
-    border: 1px solid #ced4da; /* Border yang lebih netral */
-    background-color: #fff;
-    color: #343a40;
+    border: 1px solid #555; /* Border yang lebih netral di dark mode */
+    background-color: #383838; /* Warna input gelap */
+    color: #EAEAEA;
     font-size: 16px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-control:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15);
+    border-color: #007AFF;
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.3);
+    background-color: #333; /* Sedikit lebih gelap saat fokus */
 }
 
 .custom-style-input {
@@ -359,35 +361,35 @@ body {
 }
 
 .btn-order {
-    background-color: #007bff;
+    background-color: #007AFF;
     color: #fff;
     padding: 16px 30px;
     font-size: 18px;
     width: 100%;
     border-radius: 8px;
     font-weight: 700;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
 }
 
 .btn-order:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+    box-shadow: 0 6px 15px rgba(0, 122, 255, 0.4);
 }
 
 /* ================== */
 /* FOOTER & NAVIGASI MOBILE */
 /* ================== */
 .footer-nav {
-    background-color: #ffffff;
+    background-color: #2C2C2C; /* Warna gelap untuk footer */
     position: fixed;
     bottom: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
     padding: 15px 0;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.08);
-    border-top: 1px solid #e9ecef;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid #444;
 }
 
 .nav-item {
@@ -395,15 +397,15 @@ body {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    color: #6c757d; /* Abu-abu Hangat */
+    color: #A0A0A0; /* Abu-abu terang untuk navigasi non-aktif */
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 8px 18px;
     border-radius: 10px;
 }
 
 .nav-item.active {
-    color: #007bff;
-    background-color: rgba(0, 123, 255, 0.1);
+    color: #007AFF; /* Biru Cerah */
+    background-color: rgba(0, 122, 255, 0.15); /* Aksen biru muda */
 }
 
 .nav-icon {
@@ -422,16 +424,16 @@ body {
 .audio-player {
     display: none;
     position: fixed;
-    bottom: 100px; /* Ditinggikan sedikit dari footer nav */
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #ffffff;
+    background-color: #2C2C2C;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-    width: 380px; /* Sedikit diperlebar */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    width: 380px;
     z-index: 100;
-    border: 1px solid #e9ecef;
+    border: 1px solid #444;
 }
 
 .audio-player.active {
@@ -442,7 +444,7 @@ body {
     margin-bottom: 15px;
     font-size: 17px;
     text-align: center;
-    color: #343a40;
+    color: #EAEAEA;
     font-weight: 600;
 }
 
@@ -464,7 +466,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    color: #007bff;
+    color: #007AFF;
     padding: 10px;
     border-radius: 50%;
     transition: all 0.3s ease;
@@ -476,7 +478,7 @@ body {
 }
 
 .audio-btn:hover {
-    background-color: rgba(0, 123, 255, 0.1);
+    background-color: rgba(0, 122, 255, 0.15);
     transform: scale(1.05);
 }
 
@@ -491,11 +493,11 @@ body {
 }
 
 .play-btn {
-    background-color: #007bff;
+    background-color: #007AFF;
     color: white;
     width: 50px;
     height: 50px;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
 }
 
 .play-btn:hover {
@@ -505,8 +507,8 @@ body {
 
 .audio-progress {
     flex: 1;
-    height: 8px; /* Progress bar lebih tebal */
-    background-color: #dee2e6;
+    height: 8px;
+    background-color: #555;
     border-radius: 8px;
     margin: 0 15px;
     overflow: hidden;
@@ -520,7 +522,7 @@ body {
 
 .audio-progress-bar {
     height: 100%;
-    background-color: #007bff;
+    background-color: #007AFF;
     width: 0%;
     border-radius: 8px;
     transition: width 0.1s linear, background-color 0.3s ease;
@@ -528,7 +530,7 @@ body {
 
 .audio-time {
     font-size: 14px;
-    color: #6c757d;
+    color: #A0A0A0;
     font-weight: 500;
     min-width: 45px;
 }
@@ -543,7 +545,7 @@ body {
 .volume-slider {
     flex: 1;
     height: 6px;
-    background-color: #dee2e6;
+    background-color: #555;
     border-radius: 6px;
     outline: none;
     -webkit-appearance: none;
@@ -554,16 +556,16 @@ body {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #007bff;
+    background: #007AFF;
     cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .volume-slider::-moz-range-thumb {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #007bff;
+    background: #007AFF;
     cursor: pointer;
     border: none;
 }
