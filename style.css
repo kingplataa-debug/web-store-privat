@@ -17,7 +17,7 @@
 body {
     /* LATAR BELAKANG FOTO ELEGAN (GANTI URL INI) */
     /* Untuk mode gelap, disarankan menggunakan foto dengan tone gelap atau menambahkan overlay */
-    background-image: url('https://i.ibb.co.com/B7GsVvV/20251117-123659.png'); /* GANTI DENGAN PATH FOTO ANDA */
+    background-image: url('-'); /* GANTI DENGAN PATH FOTO ANDA */
     background-color: #1A1A1A; /* Warna fallback: Dark Charcoal */
     background-size: cover;
     background-position: center center;
