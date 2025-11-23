@@ -1,47 +1,52 @@
-/* ==================================== */
-/* 🎨 SKEMA WARNA ELEGAN HITAM-BIRU (DARK MODE) */
-/* ==================================== */
-/* Latar Belakang Utama: #1A1A1A */
-/* Aksen Primer (Biru iOS): #007AFF */
-/* Konten/Card: #2C2C2C */
-/* Teks Utama: #EAEAEA */
+/* =========================================
+   THEME: PREMIUM DARK RED & BLACK
+   STYLE: PROFESSIONAL, BOLD, EXCLUSIVE
+   ========================================= */
+
+/* Import Font Modern (Montserrat untuk Title, Inter untuk Body) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap');
+
+:root {
+    --bg-deep: #050505;      /* Hitam paling pekat */
+    --bg-card: #121212;      /* Abu-abu sangat gelap untuk kartu */
+    --bg-card-hover: #1a1a1a;
+    --primary-red: #D6001C;  /* Merah Ferrari Professional */
+    --accent-red: #ff1f1f;   /* Merah terang untuk glow */
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(18, 18, 18, 0.85);
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Font style iOS-like: San Francisco (SF Pro) */
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: 'Inter', sans-serif; /* Font Body yang bersih */
 }
 
 body {
-    /* LATAR BELAKANG FOTO ELEGAN (GANTI URL INI) */
-    /* Untuk mode gelap, disarankan menggunakan foto dengan tone gelap atau menambahkan overlay */
-    background-image: url('-'); /* GANTI DENGAN PATH FOTO ANDA */
-    background-color: #1A1A1A; /* Warna fallback: Dark Charcoal */
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    color: #EAEAEA; /* Teks Utama Putih Kebiruan */
+    background-color: var(--bg-deep);
+    color: var(--text-main);
     line-height: 1.6;
-    min-height: 100vh;
+    /* Background pattern halus agar tidak flat membosankan */
+    background-image: radial-gradient(circle at 50% 0%, #220000 0%, #050505 60%);
+    background-attachment: fixed;
 }
 
-/* ================== */
-/* HEADER & NAVBAR */
-/* ================== */
+/* 2. NAVBAR - Glassmorphism Dark */
 .navbar {
-    background-color: #2C2C2C; /* Warna gelap untuk navbar */
-    padding: 18px 5%;
+    background-color: var(--glass-bg);
+    padding: 20px 5%;
     display: flex;
     align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    /* Bayangan lebih halus untuk dark mode */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid rgba(214, 0, 28, 0.3); /* Garis merah tipis di bawah */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .logo {
@@ -50,27 +55,34 @@ body {
 }
 
 .logo-icon {
-    width: 36px;
-    height: 36px;
-    margin-right: 15px;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    background-color: var(--primary-red);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(214, 0, 28, 0.5); /* Efek cahaya merah pada logo */
 }
 
 .logo-icon img {
-    width: 100%;
-    height: 100%;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
+    filter: brightness(0) invert(1); /* Memaksa ikon jadi putih */
 }
 
 .logo-text {
-    font-size: 24px;
-    font-weight: 700;
-    color: #EAEAEA; /* Teks logo putih */
-    letter-spacing: -0.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-/* ================== */
-/* MAIN CONTENT */
-/* ================== */
+/* 3. MAIN LAYOUT */
 .container {
     max-width: 1200px;
     margin: 100px auto 120px;
@@ -79,45 +91,69 @@ body {
 
 .content-section {
     display: none;
-    padding: 50px 40px;
-    background-color: #2C2C2C; /* Card warna gelap */
-    border-radius: 12px;
-    margin-bottom: 30px;
-    /* Bayangan yang menonjol di dark mode */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid #444;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .active-section {
     display: block;
 }
 
-/* ================== */
-/* DASHBOARD INTRO */
-/* ================== */
+/* 4. DASHBOARD & HERO */
 .dashboard-intro {
     text-align: center;
     margin-bottom: 60px;
+    padding: 60px 30px;
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Aksen dekorasi merah di background */
+.dashboard-intro::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(214,0,28,0.1) 0%, transparent 60%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .dashboard-intro h1 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 42px;
     margin-bottom: 20px;
-    color: #007AFF; /* Aksen Biru Cerah */
-    font-weight: 700;
+    color: var(--text-main);
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.dashboard-intro h1 span {
+    color: var(--primary-red); /* Highlight merah pada teks tertentu jika ada span */
 }
 
 .dashboard-intro p {
-    font-size: 18px;
-    max-width: 800px;
+    font-size: 16px;
+    max-width: 700px;
     margin: 0 auto;
-    color: #A0A0A0; /* Abu-abu terang untuk deskripsi */
+    color: var(--text-muted);
     line-height: 1.8;
+    position: relative;
+    z-index: 1;
 }
 
-/* ================== */
-/* FEATURE CARD */
-/* ================== */
+/* 5. FEATURES - KOTAK-KOTAK */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -126,270 +162,307 @@ body {
 }
 
 .feature-card {
-    background-color: #2C2C2C;
+    background-color: var(--bg-card);
     padding: 35px 30px;
-    border-radius: 12px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    border: 1px solid #444;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border-radius: 16px;
+    text-align: left; /* Lebih modern rata kiri */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid var(--border-subtle);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Efek hover glow merah yang mewah */
 .feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-    background-color: #383838; /* Sedikit lebih terang saat hover */
+    transform: translateY(-10px);
+    border-color: var(--primary-red);
+    box-shadow: 0 10px 30px rgba(214, 0, 28, 0.15);
+    background-color: var(--bg-card-hover);
+}
+
+.feature-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.feature-card:hover::after {
+    transform: scaleX(1);
 }
 
 .feature-icon {
-    font-size: 52px;
-    color: #007AFF; /* Aksen Biru Cerah */
-    margin-bottom: 25px;
+    font-size: 36px;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+    background: rgba(214, 0, 28, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
 }
 
 .feature-card h3 {
-    margin-bottom: 15px;
-    color: #EAEAEA;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.feature-card p {
-    color: #A0A0A0;
-    line-height: 1.7;
-    flex-grow: 1;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #EAEAEA;
-    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 12px;
+    color: var(--text-main);
+    font-size: 20px;
     font-weight: 700;
 }
 
-/* ================== */
-/* PRODUCT CARD */
-/* ================== */
+.feature-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* 6. JUDUL SECTION */
+.section-title {
+    text-align: center;
+    margin: 0 auto 50px;
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: transparent;
+    box-shadow: none;
+    display: block;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Garis bawah judul custom */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-red);
+    border-radius: 2px;
+}
+
+/* 7. PRODUK */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
 }
 
 .product-card {
-    background-color: #2C2C2C;
-    border-radius: 12px;
+    background-color: var(--bg-card);
+    border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    border: 1px solid #444;
-    width: 100%;
-    max-width: 320px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-subtle);
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-color: rgba(214, 0, 28, 0.3);
 }
 
 .product-image {
     height: 200px;
-    /* Gradasi Biru Cerah */
-    background: linear-gradient(135deg, #007AFF, #0056b3);
+    /* Gradient Hitam Abu Elegan */
+    background: linear-gradient(45deg, #1a1a1a, #333333);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 60px;
-    color: white;
+    font-size: 50px;
+    color: #555;
+    position: relative;
+}
+
+/* Overlay merah saat hover gambar */
+.product-card:hover .product-image::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(214, 0, 28, 0.1);
 }
 
 .product-info {
-    padding: 30px 25px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 25px;
 }
 
 .product-title {
-    font-size: 22px;
-    margin-bottom: 12px;
-    color: #EAEAEA;
-    font-weight: 600;
-    line-height: 1.4;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    font-weight: 700;
 }
 
 .product-price {
-    font-size: 22px;
-    color: #007AFF; /* Biru Cerah */
+    font-size: 20px;
+    color: var(--primary-red);
     margin-bottom: 8px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .product-sold {
-    font-size: 15px;
-    color: #A0A0A0;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.product-sold::before {
-    content: "🛍️";
-    font-size: 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    background: #1a1a1a;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
 }
 
 .product-actions {
     display: flex;
-    gap: 15px;
-    margin-top: auto;
+    gap: 10px;
 }
 
 .btn {
-    padding: 14px 20px;
+    padding: 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: 8px; /* Sudut lebih tajam sedikit */
     cursor: pointer;
     font-weight: 600;
+    font-size: 13px;
     transition: all 0.3s ease;
-    flex: 1;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex: 1;
 }
 
 .btn-play {
-    background-color: #444; /* Abu-abu tombol dark mode */
-    color: #EAEAEA;
-    border: 1px solid #555;
-}
-
-.btn-play:hover {
-    background-color: #555;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.btn-buy {
-    background-color: #007AFF; /* Biru Cerah */
-    color: #fff;
-}
-
-.btn-buy:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 122, 255, 0.4);
-}
-
-/* ================== */
-/* REQUEST FORM */
-/* ================== */
-.request-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #2C2C2C;
-    padding: 50px 45px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    color: var(--text-main);
     border: 1px solid #444;
 }
 
+.btn-play:hover {
+    border-color: var(--text-main);
+    background-color: rgba(255,255,255,0.05);
+}
+
+.btn-buy {
+    background: linear-gradient(135deg, var(--primary-red), #990014);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(214, 0, 28, 0.4);
+}
+
+.btn-buy:hover {
+    background: linear-gradient(135deg, #ff1f1f, #b30018);
+    box-shadow: 0 6px 20px rgba(214, 0, 28, 0.6);
+    transform: translateY(-2px);
+}
+
+/* 8. REQUEST FORM */
+.request-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
 .request-logo {
-    font-size: 64px;
-    color: #007AFF;
-    margin-bottom: 30px;
+    font-size: 50px;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(214, 0, 28, 0.4);
 }
 
 .request-title {
-    font-size: 34px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
     margin-bottom: 40px;
-    color: #EAEAEA;
+    color: var(--text-main);
     font-weight: 700;
 }
 
 .form-group {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     text-align: left;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 12px;
-    font-weight: 600;
-    color: #EAEAEA;
-    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--text-muted);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .form-control {
     width: 100%;
-    padding: 16px 18px;
+    padding: 15px;
     border-radius: 8px;
-    border: 1px solid #555; /* Border yang lebih netral di dark mode */
-    background-color: #383838; /* Warna input gelap */
-    color: #EAEAEA;
-    font-size: 16px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #333;
+    background-color: #0a0a0a;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
 }
 
 .form-control:focus {
     outline: none;
-    border-color: #007AFF;
-    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.3);
-    background-color: #333; /* Sedikit lebih gelap saat fokus */
+    border-color: var(--primary-red);
+    background-color: #000;
+    box-shadow: 0 0 0 2px rgba(214, 0, 28, 0.2);
 }
 
-.custom-style-input {
-    display: none;
-    margin-top: 15px;
-}
-
-.custom-style-input.show {
-    display: block;
-}
+.custom-style-input { display: none; margin-top: 15px; }
+.custom-style-input.show { display: block; }
 
 .btn-order {
-    background-color: #007AFF;
+    background: linear-gradient(90deg, var(--primary-red), #990014);
     color: #fff;
     padding: 16px 30px;
-    font-size: 18px;
+    font-size: 16px;
     width: 100%;
     border-radius: 8px;
     font-weight: 700;
-    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 5px 20px rgba(214, 0, 28, 0.3);
 }
 
 .btn-order:hover {
-    background-color: #0056b3;
+    box-shadow: 0 8px 25px rgba(214, 0, 28, 0.5);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 122, 255, 0.4);
 }
 
-/* ================== */
-/* FOOTER & NAVIGASI MOBILE */
-/* ================== */
+/* 9. FOOTER NAV (MOBILE APP STYLE) */
 .footer-nav {
-    background-color: #2C2C2C; /* Warna gelap untuk footer */
+    background-color: rgba(10, 10, 10, 0.9);
     position: fixed;
     bottom: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
     padding: 15px 0;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid #444;
+    border-top: 1px solid #222;
+    backdrop-filter: blur(15px);
+    z-index: 2000;
 }
 
 .nav-item {
@@ -397,217 +470,136 @@ body {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    color: #A0A0A0; /* Abu-abu terang untuk navigasi non-aktif */
-    transition: color 0.3s ease, background-color 0.3s ease;
-    padding: 8px 18px;
-    border-radius: 10px;
+    color: #555;
+    transition: all 0.3s ease;
+    padding: 8px 20px;
+    border-radius: 12px;
+}
+
+.nav-item:hover {
+    color: #fff;
 }
 
 .nav-item.active {
-    color: #007AFF; /* Biru Cerah */
-    background-color: rgba(0, 122, 255, 0.15); /* Aksen biru muda */
+    color: var(--primary-red);
+    background-color: rgba(214, 0, 28, 0.1);
 }
 
-.nav-icon {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
+.nav-icon { font-size: 20px; margin-bottom: 5px; }
+.nav-text { font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
 
-.nav-text {
-    font-size: 13px;
-    font-weight: 500;
-}
-
-/* ================== */
-/* AUDIO PLAYER */
-/* ================== */
+/* 10. AUDIO PLAYER (Floating Dark Glass) */
 .audio-player {
     display: none;
     position: fixed;
-    bottom: 100px;
+    bottom: 90px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #2C2C2C;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-    width: 380px;
-    z-index: 100;
-    border: 1px solid #444;
+    background-color: rgba(20, 20, 20, 0.95);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    width: 340px;
+    z-index: 2100;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
 }
 
-.audio-player.active {
-    display: block;
+.audio-player.active { display: block; animation: slideUp 0.4s ease; }
+
+@keyframes slideUp {
+    from { transform: translate(-50%, 20px); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
 }
 
 .audio-title {
     margin-bottom: 15px;
-    font-size: 17px;
+    font-size: 14px;
     text-align: center;
-    color: #EAEAEA;
+    color: #fff;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-.audio-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.audio-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-}
+.audio-buttons { display: flex; gap: 15px; justify-content: center; align-items: center; }
 
 .audio-btn {
-    background: none;
-    border: none;
+    background: #222;
+    border: 1px solid #333;
     cursor: pointer;
-    color: #007AFF;
-    padding: 10px;
+    color: #fff;
+    padding: 0;
     border-radius: 50%;
     transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
 }
 
-.audio-btn:hover {
-    background-color: rgba(0, 122, 255, 0.15);
-    transform: scale(1.05);
-}
-
-.audio-btn:active {
-    transform: scale(0.98);
-}
-
-.audio-btn svg {
-    width: 22px;
-    height: 22px;
-    fill: currentColor;
-}
+.audio-btn:hover { border-color: var(--primary-red); color: var(--primary-red); }
 
 .play-btn {
-    background-color: #007AFF;
-    color: white;
+    background: var(--primary-red);
+    border-color: var(--primary-red);
     width: 50px;
     height: 50px;
-    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
+    box-shadow: 0 0 15px rgba(214, 0, 28, 0.4);
 }
 
 .play-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+    background: #ff1f1f;
+    transform: scale(1.1);
+    color: #fff;
 }
 
 .audio-progress {
-    flex: 1;
-    height: 8px;
-    background-color: #555;
-    border-radius: 8px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 4px;
     margin: 0 15px;
-    overflow: hidden;
     position: relative;
     cursor: pointer;
 }
 
-.audio-progress:hover .audio-progress-bar {
-    background-color: #0056b3;
-}
-
 .audio-progress-bar {
     height: 100%;
-    background-color: #007AFF;
+    background-color: var(--primary-red);
+    box-shadow: 0 0 10px var(--primary-red);
     width: 0%;
-    border-radius: 8px;
-    transition: width 0.1s linear, background-color 0.3s ease;
+    border-radius: 4px;
 }
 
-.audio-time {
-    font-size: 14px;
-    color: #A0A0A0;
-    font-weight: 500;
-    min-width: 45px;
-}
-
-.volume-control {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-}
+.audio-time { font-size: 11px; color: #888; font-family: monospace; }
 
 .volume-slider {
     flex: 1;
-    height: 6px;
-    background-color: #555;
-    border-radius: 6px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 4px;
     outline: none;
     -webkit-appearance: none;
 }
 
 .volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: #007AFF;
+    background: #fff;
     cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s;
 }
+.volume-slider::-webkit-slider-thumb:hover { background: var(--primary-red); }
 
-.volume-slider::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #007AFF;
-    cursor: pointer;
-    border: none;
-}
-
-/* ================== */
-/* MEDIA QUERIES (RESPONSIVE) */
-/* ================== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .container {
-        margin: 80px auto 100px;
-        padding: 0 15px;
-    }
-    
-    .content-section {
-        padding: 30px 20px;
-    }
-    
-    .features {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 20px;
-    }
-    
-    .dashboard-intro h1 {
-        font-size: 32px;
-    }
-    
-    .section-title {
-        font-size: 32px;
-    }
-    
-    .request-container {
-        padding: 40px 25px;
-    }
-
-    .audio-player {
-        width: 90%;
-        max-width: 350px;
-        bottom: 90px;
-    }
+    .container { margin: 80px auto 100px; padding: 0 15px; }
+    .dashboard-intro { padding: 40px 20px; }
+    .dashboard-intro h1 { font-size: 32px; }
+    .feature-card { padding: 25px; }
+    .audio-player { width: 90%; bottom: 85px; }
+    .nav-text { display: none; } /* Hide text on mobile nav for cleaner look */
+    .nav-icon { margin-bottom: 0; font-size: 24px; }
 }
