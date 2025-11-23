@@ -30,7 +30,9 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     /* Background pattern halus agar tidak flat membosankan */
-    background-image: radial-gradient(circle at 50% 0%, #220000 0%, #050505 60%);
+    background-image: url('https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=1000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 }
 
